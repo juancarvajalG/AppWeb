@@ -30,6 +30,7 @@ function EditNotePage() {
   fetchNote();
 }, [id, navigate]);
 
+
   // Con esta función actulizamos la nota
   const handleUpdateNote = async (updatedNote) => {
     try {

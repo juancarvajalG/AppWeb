@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getNotes,
   createNote,
   updateNote,
   deleteNote,
@@ -9,7 +8,6 @@ const {
 } = require('../controllers/notes');
 
 
-router.get('/', getNotes);
 router.get('/:id', getNoteById);
 router.post('/', createNote);    
 router.put('/:id', updateNote);     

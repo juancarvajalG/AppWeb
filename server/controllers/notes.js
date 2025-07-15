@@ -2,12 +2,6 @@ let notes = [
   { id: 1, title: "Mi primera nota", content: "Hola mundo", priority: "media" }
 ];
 
-
-exports.getNotes = (req, res) => {
-  res.json(notes);
-};
-
-
 exports.getNoteById = (req, res) => {
   const noteId = parseInt(req.params.id);
   const note = notes.find(n => n.id === noteId);
@@ -20,7 +14,6 @@ exports.getNoteById = (req, res) => {
 
   res.json(note);
 };
-
 
 
 // Crear una nueva nota
