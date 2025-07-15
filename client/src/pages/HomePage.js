@@ -20,7 +20,7 @@ function HomePage() {
   // Crear una nueva nota
   const handleCreateNote = async (newNote) => {
     await axios.post("http://localhost:5000/api/notas", newNote);
-    fetchNotes(); // Actualizar la lista
+    fetchNotes(); 
   };
 
   return (

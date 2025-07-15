@@ -1,16 +1,15 @@
-// Datos en memoria (simulan una DB)
 let notes = [
   { id: 1, title: "Mi primera nota", content: "Hola mundo", priority: "media" }
 ];
 
-// Obtener todas las notas
+
 exports.getNotes = (req, res) => {
   res.json(notes);
 };
 
-// Agrega este controlador
+
 exports.getNoteById = (req, res) => {
-  const noteId = parseInt(req.params.id); // Convertir a número
+  const noteId = parseInt(req.params.id);
   const note = notes.find(n => n.id === noteId);
 
   if (!note) {
@@ -21,7 +20,7 @@ exports.getNoteById = (req, res) => {
 
   res.json(note);
 };
-// Luego en server/routes/notes.js:
+
 
 
 // Crear una nueva nota
