@@ -8,11 +8,11 @@ const {
   getNoteById,
 } = require('../controllers/notes');
 
-// CRUD
+
 router.get('/', getNotes);
 router.get('/:id', getNoteById);
-router.post('/', createNote);       // Crear nota (POST /api/notas)
-router.put('/:id', updateNote);     // Actualizar nota (PUT /api/notas/1)
-router.delete('/:id', deleteNote);  // Eliminar nota (DELETE /api/notas/1)
+router.post('/', createNote);       
+router.put('/:id', updateNote);     
+router.delete('/:id', deleteNote);  
 
 module.exports = router;

@@ -1,4 +1,3 @@
-// Datos en memoria (simulan una DB)
 let notes = [
   { id: 1, title: "Mi primera nota", content: "Hola mundo", priority: "media" }
 ];
@@ -8,9 +7,8 @@ exports.getNotes = (req, res) => {
   res.json(notes);
 };
 
-// Agrega este controlador
 exports.getNoteById = (req, res) => {
-  const noteId = parseInt(req.params.id); // Convertir a número
+  const noteId = parseInt(req.params.id);
   const note = notes.find(n => n.id === noteId);
 
   if (!note) {
@@ -21,8 +19,6 @@ exports.getNoteById = (req, res) => {
 
   res.json(note);
 };
-// Luego en server/routes/notes.js:
-
 
 // Crear una nueva nota
 exports.createNote = (req, res) => {
@@ -61,5 +57,5 @@ exports.updateNote = (req, res) => {
 exports.deleteNote = (req, res) => {
   const { id } = req.params;
   notes = notes.filter(note => note.id !== parseInt(id));
-  res.status(204).send(); // 204 = "No Content" (éxito pero sin respuesta)
+  res.status(204).send();
 };
