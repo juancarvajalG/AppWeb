@@ -1,0 +1,7 @@
+Para inicializar el proyecto deben de instalar sus dependencias desde la raiz la cual es notas-app
+
+Segundo abren una terminal e ingresan a la carpeta de server e inician el comando node app.js
+
+Por último crean otra terminal donde van a ingresar a la carpeta client e inician el comando npm start y esperan que cargue.
+
+Los estilos aún estan puestos en cambios, cambios que obviamente ire haciendo

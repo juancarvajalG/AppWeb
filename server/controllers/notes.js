@@ -9,6 +9,7 @@ exports.getNotes = (req, res) => {
 
 exports.getNoteById = (req, res) => {
   const noteId = parseInt(req.params.id);
+  const noteId = parseInt(req.params.id);
   const note = notes.find(n => n.id === noteId);
 
   if (!note) {
