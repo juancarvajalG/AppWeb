@@ -11,6 +11,7 @@ function EditNotePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   // Con esto obtenemos la nota para editar
   useEffect(() => {
   const fetchNote = async () => {
@@ -36,7 +37,7 @@ function EditNotePage() {
     try {
       setLoading(true);
       await axios.put(`http://localhost:5000/api/notas/${id}`, updatedNote);
-      navigate('/', { state: { message: 'Nota actualizada correctamente' } });
+      navigate('/');
     } catch (err) {
       setError('Error al actualizar la nota');
       console.error('Error:', err);
@@ -52,7 +53,7 @@ function EditNotePage() {
   try {
     setLoading(true);
     await axios.delete(`http://localhost:5000/api/notas/${id}`);
-    navigate('/', { state: { message: 'Nota eliminada correctamente' } });
+    navigate('/');
   } catch (err) {
     setError('Error al eliminar la nota');
     console.error('Error al eliminar:', err);
@@ -82,9 +83,6 @@ function EditNotePage() {
         Eliminar Nota
       </button>
 
-      
-      {loading && <p>Guardando cambios...</p>}
-      {error && <p className="error">{error}</p>}
     </div>
   );
 }
